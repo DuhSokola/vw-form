@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <!-- bower:css -->
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/main.css">
+    <!-- endinject -->
+</head>
+<body>
+<div ng-controller="mainCtrl">
+    <form>
+        <div class="btn-group">
+            <label class="btn btn-default" ng-model="salutation" name="salutation" btn-radio="'m'" required>{{'MR' |
+                translate}}</label>
+            <label class="btn btn-default" ng-model="salutation" name="salutation" btn-radio="'f'" required>{{'MRS' |
+                translate}}</label>
+        </div>
+        <br>
+        <input type="text" name="surname" ng-model="surname">
+        <br>
+        <input type="text" name="forename" ng-model="forename">
+        <br>
+        <input type="text" name="street" ng-model="street">
+        <br>
+        <input type="text" name="streetNr" ng-model="streetNr">
+        <br>
+        <input type="text" name="post" ng-model="post">
+        <br>
+        <input type="text" name="zip" ng-model="zip">
+        <br>
+        <input type="text" name="city" ng-model="city">
+        <br>
+        <input type="text" name="telephone" ng-model="telephone">
+        <br>
+        <input type="text" name="bankName" ng-model="bankName">
+        <br>
+        <input type="text" name="bankCity" ng-model="bankCity">
+        <br>
+        <input type="text" name="bankIBAN" ng-model="bankIBAN">
+        <br>
+        <input type="text" name="bankAccount" ng-model="bankAccount">
+
+    </form>
+</div>
+
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<!-- endbower -->
+
+<!-- inject:js -->
+<script src="/app.js"></script>
+<!-- endinject -->
+</body>
+</html>
