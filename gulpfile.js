@@ -28,7 +28,7 @@ gulp.task('injectSources', function () {
     return target.pipe(inject(gulp.src(
         [
             'app.js',
-            'main.css',
+            '*.css',
             'bower_components/bootstrap/dist/css/bootstrap.css'
         ],
         {
@@ -50,7 +50,7 @@ gulp.task('browserSync', function() {
             baseDir: 'src'
         }
     });
-    gulp.watch(['app.js','index.html',], {cwd: 'src'}, reload);
+    gulp.watch(['app.js','index.html'], {cwd: 'src'}, reload);
 });
 
 /**

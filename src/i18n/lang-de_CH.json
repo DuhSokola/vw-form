@@ -13,5 +13,6 @@
   "BANK_NAME" : "Bankname:*",
   "BANK_CITY" : "Ort:*",
   "BANK_IBAN" : "IBAN:*",
-  "BANK_ACCOUNT" : "Konto-Nummer:*"
+  "BANK_ACCOUNT" : "Konto-Nummer:*",
+  "SUBMIT" : "Abschicken"
 }
