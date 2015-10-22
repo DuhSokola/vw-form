@@ -28,7 +28,8 @@ gulp.task('injectSources', function () {
     return target.pipe(inject(gulp.src(
         [
             'app.js',
-            'main.css'
+            'main.css',
+            'bower_components/bootstrap/dist/css/bootstrap.css'
         ],
         {
             read: false,

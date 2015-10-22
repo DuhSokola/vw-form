@@ -1,4 +1,17 @@
 {
+  "SALUTATION" : "Anrede",
   "MR" : "Herr",
-  "MRS" : "Frau"
+  "MRS" : "Frau",
+  "SURNAME" : "Name",
+  "FORENAME" : "Vorname",
+  "STREET" : "Strasse",
+  "STREET_NR" : "Hausnummer",
+  "PO_BOX" : "Postfach",
+  "ZIP" : "PLZ",
+  "CITY" : "Ort",
+  "TELEPHONE" : "Telefon",
+  "BANK_NAME" : "Bankname",
+  "BANK_CITY" : "Ort",
+  "BANK_IBAN" : "IBAN",
+  "BANK_ACCOUNT" : "Konto-Nummer"
 }

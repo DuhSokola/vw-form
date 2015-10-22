@@ -9,43 +9,120 @@
 
     <!-- inject:css -->
     <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
     <!-- endinject -->
 </head>
 <body>
 <div ng-controller="mainCtrl">
-    <form>
-        <div class="btn-group">
-            <label class="btn btn-default" ng-model="salutation" name="salutation" btn-radio="'m'" required>{{'MR' |
-                translate}}</label>
-            <label class="btn btn-default" ng-model="salutation" name="salutation" btn-radio="'f'" required>{{'MRS' |
-                translate}}</label>
-        </div>
-        <br>
-        <input type="text" name="surname" ng-model="surname">
-        <br>
-        <input type="text" name="forename" ng-model="forename">
-        <br>
-        <input type="text" name="street" ng-model="street">
-        <br>
-        <input type="text" name="streetNr" ng-model="streetNr">
-        <br>
-        <input type="text" name="post" ng-model="post">
-        <br>
-        <input type="text" name="zip" ng-model="zip">
-        <br>
-        <input type="text" name="city" ng-model="city">
-        <br>
-        <input type="text" name="telephone" ng-model="telephone">
-        <br>
-        <input type="text" name="bankName" ng-model="bankName">
-        <br>
-        <input type="text" name="bankCity" ng-model="bankCity">
-        <br>
-        <input type="text" name="bankIBAN" ng-model="bankIBAN">
-        <br>
-        <input type="text" name="bankAccount" ng-model="bankAccount">
+    <div class="container" id="container">
+        <form>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <h2 class="text-center">Adressdaten</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default">
+                                    <input type="radio" name="inputWalls" value="Herr">
+                                    {{'MR'|translate}} </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" name="inputWalls" value="Frau">
+                                    {{'MRS'|translate}} </label>
+                            </div>
+                        </div>
+                    </div>
 
-    </form>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="forename" class="control-label" translate="FORENAME"></label>
+                                <input type="text" class="form-control" name="forename" placeholder="Max"
+                                       ng-model="forename"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="surname" class="control-label" translate="SURNAME"></label>
+                                <input type="text" class="form-control" name="surname" placeholder="Muster"
+                                       ng-model="surname"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="street" class="control-label" translate="STREET"></label>
+                                <input type="text" class="form-control" name="street" placeholder="Musterstrasse"
+                                       ng-model="street"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="street_nr" class="control-label" translate="STREET_NR"></label>
+                                <input type="text" class="form-control" name="street_nr" placeholder="21"
+                                       ng-model="forename"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="zip" class="control-label" translate="ZIP"></label>
+                                <input type="text" class="form-control" name="zip" placeholder="1234"
+                                       ng-model="zip"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="city" class="control-label" translate="CITY"></label>
+                                <input type="text" class="form-control" name="city" placeholder="Musterhausen"
+                                       ng-model="forename"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="po_box" class="control-label" translate="PO_BOX"></label>
+                                <input type="text" class="form-control" name="po_box" placeholder="7"
+                                       ng-model="po_box"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="telephone" class="control-label" translate="TELEPHONE"></label>
+                                <input type="text" class="form-control" name="telephone" placeholder="012 345 67 89"
+                                       ng-model="telephone"
+                                       required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <h2 class="text-center">Daten für Auszahlung</h2>
+                    </div>
+                    <div class="row">
+                        <h3>Bankverbindung</h3>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 <!-- bower:js -->
