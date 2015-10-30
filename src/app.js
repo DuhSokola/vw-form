@@ -23,6 +23,28 @@
 
     app.controller('mainCtrl',['$scope',function($scope){
 
+        var dataObject = {
+            salutation: $scope.salutation,
+            forename: $scope.forename,
+            surname: $scope.surname,
+            street: $scope.street,
+            street_nr: $scope.street_nr,
+            po_box: $scope.po_box,
+            zip:$scope.zip,
+            city: $scope.city,
+            telephone: $scope.telephone,
+            bank_name: $scope.bank_name,
+            bank_city: $scope.bank_city,
+            bank_iban: $scope.bank_iban,
+            bank_account: $scope.bank_account
+        }
+
+
+
+    }]);
+
+    app.factory('Cust',['$resources',function($resources){
+
     }]);
 
 }());
