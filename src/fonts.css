@@ -1,0 +1,61 @@
+
+@font-face {
+	font-family: "vw_text";
+	src: url("fonts/VWTextWeb-Regular.eot");
+	src: url("fonts/VWTextWeb-Regular.eot?#iefix")
+		format("embedded-opentype"), url("fonts/VWTextWeb-Regular.woff")
+		format("woff"), url("fonts/VWTextWeb-Regular.svg#vw_text")
+		format("svg"), url("fonts/VWTextWeb-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'vw_head_bold';
+	src: url('fonts/VWHeadWeb-Bold.eot');
+	src: url('fonts/VWHeadWeb-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/VWHeadWeb-Bold.woff') format('woff'),
+		url('fonts/VWHeadWeb-Bold.ttf') format('truetype'),
+		url('fonts/VWHeadWeb-Bold.svg#vw_head_bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'vw_head';
+	src: url('fonts/VWHeadWeb-Regular.eot');
+	src: url('fonts/VWHeadWeb-Regular.eot?#iefix')
+		format('embedded-opentype'), url('fonts/VWHeadWeb-Regular.woff')
+		format('woff'), url('fonts/VWHeadWeb-Regular.ttf') format('truetype'),
+		url('fonts/VWHeadWeb-Regular.svg#vw_head') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "VWD4 Book";
+	src:
+		url("fonts/VWHeadlineOT-Book.eot");
+	src:
+		url("fonts/VWHeadlineOT-Book.eot?#iefix")
+		format("embedded-opentype"),
+		url("fonts/VWHeadlineOT-Book.woff")
+		format("woff"),
+		url("fonts/VWHeadlineOT-Book.svg#webfontX0LFdQBr")
+		format("svg"),
+		url("fonts/VWHeadlineOT-Book.ttf")
+		format("truetype");
+}
+
+@font-face {
+	font-family: "VWD4 Semibold";
+	src:
+		url("fonts/VWHeadlineOT-Semibold.eot");
+	src:
+		url("fonts/VWHeadlineOT-Semibold.eot?#iefix")
+		format("embedded-opentype"),
+		url("fonts/VWHeadlineOT-Semibold.woff")
+		format("woff"),
+		url("fonts/VWHeadlineOT-Semibold.svg#webfontfbDJZY22")
+		format("svg"),
+		url("fonts/VWHeadlineOT-Semibold.ttf")
+		format("truetype");
+}

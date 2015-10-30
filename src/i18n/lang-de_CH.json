@@ -14,5 +14,9 @@
   "BANK_CITY" : "Ort:*",
   "BANK_IBAN" : "IBAN:*",
   "BANK_ACCOUNT" : "Konto-Nummer:*",
-  "SUBMIT" : "Abschicken"
+  "SUBMIT" : "Abschicken",
+
+  "FORENAME_NAME":"Vorname, Name:*",
+  "STREETNR": "Strasse, Nr:*",
+  "ZIP_CITY": "PLZ, Ort:*"
 }

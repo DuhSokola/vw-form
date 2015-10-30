@@ -2,3 +2,4 @@
 node_modules
 *.iml
 src/bower_components
+src/fonts

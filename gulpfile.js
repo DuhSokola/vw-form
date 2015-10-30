@@ -5,7 +5,6 @@ var gulp = require('gulp'),
  * Combined Tasks
  */
 gulp.task('serve',['inject', 'lint', 'browserSync']);
-
 gulp.task('lint',['html','css','js']);
 gulp.task('inject',['injectBower','injectSources']);
 
@@ -29,7 +28,7 @@ gulp.task('injectSources', function () {
         [
             'app.js',
             '*.css',
-            'bower_components/bootstrap/dist/css/bootstrap.css'
+            'bootstrap.vw.min.css'
         ],
         {
             read: false,
@@ -50,7 +49,7 @@ gulp.task('browserSync', function() {
             baseDir: 'src'
         }
     });
-    gulp.watch(['app.js','index.html'], {cwd: 'src'}, reload);
+    gulp.watch(['app.js','index.html','index3.html','*.css','i18n/*.json'], {cwd: 'src'}, reload);
 });
 
 /**
