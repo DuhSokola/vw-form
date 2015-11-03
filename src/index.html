@@ -8,165 +8,135 @@
     <!-- endbower -->
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="/bootstrap.vw.min.css">
     <link rel="stylesheet" href="/fonts.css">
     <link rel="stylesheet" href="/main.css">
     <!-- endinject -->
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <h1 class="text-center">Anforderung an Kundendaten für Abwicklung</h1>
-    </div>
-    <br>
-
-    <div class="row">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="form-group">
-                    <label for="salutation" class="control-label" translate="SALUTATION"></label>
-
-                    <div class="btn-group" name="salutation" data-toggle="buttons">
-                        <label class="btn btn-default">
-                            <input type="radio" name="inputWalls" ng-model="salutation" value="Herr">
-                            {{'MR'|translate}} </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="inputWalls" ng-model="salutation" value="Frau">
-                            {{'MRS'|translate}} </label>
-                    </div>
-                </div>
+<div class="wrapper" ng-controller="mainCtrl">
+    <form>
+        <div class="field" name="salutation_field">
+            <div class="label">
+                <label name="salutation_label" translate="SALUTATION"></label>
+            </div>
+            <div class="input">
+                <select>
+                    <option value="" ng-model="salutation" translate="CHOOSE"></option>
+                    <option value="mr" ng-model="salutation" translate="MR"></option>
+                    <option value="mrs" ng-model="salutation" translate="MRS"></option>
+                </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-6">
-                <div class="row">
-                    <h2 class="text-center">Adressdaten</h2>
-                </div>
 
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label for="forename_name" class="control-label" translate="FORENAME_NAME"></label>
-                            <input type="text" class="form-control" name="forename_name" placeholder="Max Muster"
-                                   ng-model="forename_name"
-                                   required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label for="street_nr" class="control-label" translate="STREETNR"></label>
-                            <input type="text" class="form-control" name="street_nr" placeholder="Max"
-                                   ng-model="street_nr"
-                                   required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label for="po_box" class="control-label" translate="PO_BOX"></label>
-                            <input type="text" class="form-control" name="po_box" placeholder="Max"
-                                   ng-model="po_box"
-                                   required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label for="zip_city" class="control-label" translate="ZIP_CITY"></label>
-                            <input type="text" class="form-control" name="zip_city" placeholder="Max"
-                                   ng-model="zip_city"
-                                   required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                            <label for="telephone" class="control-label" translate="TELEPHONE"></label>
-                            <input type="text" class="form-control" name="telephone" placeholder="Max"
-                                   ng-model="telephone"
-                                   required>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="field" name="forename_field">
+            <div class="label">
+                <label name="forename_label" translate="FORENAME"></label>
             </div>
-            <div class="col-xs-6">
-                <div class="row">
-                    <div class="row">
-                        <h2 class="text-center">Daten für Auszahlung</h2>
-                    </div>
-                    <div class="row">
-                        <h3 style="padding-left:14px" class="control-label">Bankverbindung:</h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <div class="form-group">
-                                <label for="bank_name" class="control-label" translate="BANK_NAME"></label>
-                                <input type="text" class="form-control" name="bank_name" placeholder="Musterbank"
-                                       ng-model="bank_name"
-                                       required>
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <div class="form-group">
-                                <label for="bank_city" class="control-label" translate="BANK_CITY"></label>
-                                <input type="text" class="form-control" name="bank_city" placeholder="Musterort"
-                                       ng-model="bank_city"
-                                       required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="form-group">
-                                <label for="bank_iban" class="control-label" translate="BANK_IBAN"></label>
-                                <input type="text" class="form-control" name="bank_iban"
-                                       placeholder="CH23 0483 5020 6290 8100 0"
-                                       ng-model="bank_iban"
-                                       required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="row">
-                        <h3 style="padding-left:14px" class="control-label">Postverbindung:</h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <div class="form-group">
-                                <label for="bank_account" class="control-label" translate="BANK_ACCOUNT"></label>
-                                <input type="text" class="form-control" name="bank_account" placeholder="50-8700-1"
-                                       ng-model="bank_account"
-                                       required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="input">
+                <input name="forename_input" placeholder="Max" ng-model="forename">
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="form-group" style="margin-right: -15px">
-                    <button type="submit" class="btn btn-default btn-block" ng-click="submitData()"
-                            translate="SUBMIT"></button>
-                </div>
+
+        <div class="field" name="surname_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
             </div>
         </div>
-    </div>
+
+        <div class="field" name="street_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+
+        <div class="field" name="streetNr_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+
+        <div class="field" name="poBox_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+
+        <div class="field" name="zip_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+
+        <div class="field" name="city_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+
+        <div class="field" name="telephone_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+
+        <div class="field" name="bankName_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+
+        <div class="field" name="bankCity_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+
+        <div class="field" name="bankIban_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+
+        <div class="field" name="bankAccount_field">
+            <div class="label">
+
+            </div>
+            <div class="input">
+
+            </div>
+        </div>
+    </form>
 </div>
 
 <!-- bower:js -->

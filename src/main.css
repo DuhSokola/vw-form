@@ -1,12 +1,51 @@
-h1{
+h1 {
     font-size: 20px;
     font-weight: bold;
 }
-h2{
+
+h2 {
     font-size: 20px;
 }
-h3{
+
+h3 {
     font-size: 17px;
     font-weight: bold;
+}
 
+form{
+    width: 100%;
+    padding:10px 10px 10px 10px;
+}
+
+label{
+    width: 160px;
+}
+
+select{
+    width:314px;
+    height: 25px;
+}
+
+input{
+    width:310px;
+    height: 20px;
+}
+
+.wrapper{
+    width:500px;
+    background-color: #EAEEED;
+}
+
+.field {
+    width: 300px;
+    height: 40px;
+}
+
+.field .label {
+    float: left;
+}
+
+.field .input {
+    float: right;
+    width:150px;
 }

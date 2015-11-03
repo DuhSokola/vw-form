@@ -2,6 +2,7 @@
     'use strict';
 
     var deps = [
+        'ngResource',
         'ngSanitize',
         'pascalprecht.translate'
     ];
@@ -21,7 +22,7 @@
         $translateProvider.preferredLanguage('de_CH');
     });
 
-    app.controller('mainCtrl',['$scope',function($scope){
+    app.controller('mainCtrl',['$scope','Customer',function($scope, Customer){
 
         var dataObject = {
             salutation: $scope.salutation,
@@ -40,11 +41,12 @@
         }
 
 
-
     }]);
 
-    app.factory('Cust',['$resources',function($resources){
-
+    app.factory('Customer',['$resource',function($resource){
+        return $resource('http://localhost:3001/api/customers/:id');
     }]);
+
+
 
 }());
