@@ -24,11 +24,22 @@ label{
 select{
     width:314px;
     height: 25px;
+    border:1px solid #CFD7D9;
 }
 
 input{
     width:310px;
     height: 20px;
+    background-color:#fff;
+    border:1px solid #CFD7D9;
+    overflow:hidden;
+    clear:both;
+}
+
+.sample{
+    margin-top:10px;
+    margin-left:168px;
+    width:300px;
 }
 
 .wrapper{
@@ -37,7 +48,7 @@ input{
 }
 
 .field {
-    width: 300px;
+    width: 315px;
     height: 40px;
 }
 

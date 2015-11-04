@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8">
 
     <!-- bower:css -->
     <!-- endbower -->
@@ -14,8 +15,11 @@
 </head>
 <body>
 
+<h2 translate="TITLE_1"></h2>
 <div class="wrapper" ng-controller="mainCtrl">
     <form>
+        <h2 style="margin-top: -5px">Adressdaten</h2>
+
         <div class="field" name="salutation_field">
             <div class="label">
                 <label name="salutation_label" translate="SALUTATION"></label>
@@ -34,106 +38,131 @@
                 <label name="forename_label" translate="FORENAME"></label>
             </div>
             <div class="input">
-                <input name="forename_input" placeholder="Max" ng-model="forename">
+                <input name="forename_input" ng-model="forename">
             </div>
         </div>
 
         <div class="field" name="surname_field">
             <div class="label">
-
+                <label name="surname_label" translate="SURNAME"></label>
             </div>
             <div class="input">
-
+                <input name="surname_input" ng-model="surname">
             </div>
         </div>
 
         <div class="field" name="street_field">
             <div class="label">
-
+                <label name="street_label" translate="STREET"></label>
             </div>
             <div class="input">
-
+                <input name="street_input" ng-model="street">
             </div>
         </div>
 
         <div class="field" name="streetNr_field">
             <div class="label">
-
+                <label name="streetNr_label" translate="STREET_NR"></label>
             </div>
             <div class="input">
-
+                <input name="streetNr_input" ng-model="streetNr">
             </div>
         </div>
 
         <div class="field" name="poBox_field">
             <div class="label">
-
+                <label name="poBox_label" translate="PO_BOX"></label>
             </div>
             <div class="input">
-
+                <input name="poBox_input" ng-model="poBox">
             </div>
         </div>
 
         <div class="field" name="zip_field">
             <div class="label">
-
+                <label name="zip_label" translate="ZIP"></label>
             </div>
             <div class="input">
-
+                <input name="zip_input" ng-model="zip">
             </div>
         </div>
 
         <div class="field" name="city_field">
             <div class="label">
-
+                <label name="city_label" translate="CITY"></label>
             </div>
             <div class="input">
+                <input name="city_input" ng-model="city">
+            </div>
+        </div>
 
+        <br/>
+
+        <div class="field" name="email_field">
+            <div class="label">
+                <label name="email_label" translate="EMAIL"></label>
+            </div>
+            <div class="input">
+                <input name="email_input" ng-model="email">
             </div>
         </div>
 
         <div class="field" name="telephone_field">
             <div class="label">
-
+                <label name="telephone_label" translate="TELEPHONE"></label>
             </div>
             <div class="input">
-
+                <input name="telephone_input" ng-model="telephone">
             </div>
         </div>
 
+        <h2>Daten für Auszahlung</h2>
+
+        <h3>Bankverbindung</h3>
+
         <div class="field" name="bankName_field">
             <div class="label">
-
+                <label name="bankName_label" translate="BANK_NAME"></label>
             </div>
             <div class="input">
-
+                <input name="bankName_input" ng-model="bankName">
             </div>
         </div>
 
         <div class="field" name="bankCity_field">
             <div class="label">
-
+                <label name="bankCity_label" translate="BANK_CITY"></label>
             </div>
             <div class="input">
-
+                <input name="bankCity_input" ng-model="bankCity">
             </div>
         </div>
 
         <div class="field" name="bankIban_field">
             <div class="label">
-
+                <label name="bankIban_label" translate="BANK_IBAN"></label>
             </div>
             <div class="input">
-
+                <input name="bankIban_input" ng-model="bankIban">
+            </div>
+            <br>
+            <div class="sample">
+                <span translate="SAMPLE_BANK_IBAN"></span>
             </div>
         </div>
 
+        <h3>Postverbindung</h3>
+
+
         <div class="field" name="bankAccount_field">
             <div class="label">
-
+                <label name="bankAccount_label" translate="BANK_ACCOUNT"></label>
             </div>
             <div class="input">
-
+                <input name="bankAccount_input" ng-model="bankAccount">
+            </div>
+            <div class="sample">
+                <span translate="SAMPLE_BANK_ACCOUNT"></span>
             </div>
         </div>
     </form>
