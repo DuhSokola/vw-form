@@ -15,10 +15,10 @@
 </head>
 <body>
 
-<h2 translate="TITLE_1"></h2>
+<h1 translate="TITLE_1"></h1>
 <div class="wrapper" ng-controller="mainCtrl">
     <form>
-        <h2 style="margin-top: -5px">Adressdaten</h2>
+        <h2 style="margin-top: -5px" translate="ADDRESSDATA"></h2>
 
         <div class="field" name="salutation_field">
             <div class="label">
@@ -38,7 +38,7 @@
                 <label name="forename_label" translate="FORENAME"></label>
             </div>
             <div class="input">
-                <input name="forename_input" ng-model="forename">
+                <input type="text" name="forename_input" ng-model="forename">
             </div>
         </div>
 
@@ -47,25 +47,17 @@
                 <label name="surname_label" translate="SURNAME"></label>
             </div>
             <div class="input">
-                <input name="surname_input" ng-model="surname">
+                <input type="text" name="surname_input" ng-model="surname">
             </div>
         </div>
 
         <div class="field" name="street_field">
             <div class="label">
-                <label name="street_label" translate="STREET"></label>
+                <label name="street_label" translate="STREETNR"></label>
             </div>
-            <div class="input">
-                <input name="street_input" ng-model="street">
-            </div>
-        </div>
-
-        <div class="field" name="streetNr_field">
-            <div class="label">
-                <label name="streetNr_label" translate="STREET_NR"></label>
-            </div>
-            <div class="input">
-                <input name="streetNr_input" ng-model="streetNr">
+            <div class="input2">
+                <input class="street" type="text" name="street_input" ng-model="street">
+                <input class="streetnr" type="text" name="streetNr_input" ng-model="streetNr">
             </div>
         </div>
 
@@ -74,7 +66,7 @@
                 <label name="poBox_label" translate="PO_BOX"></label>
             </div>
             <div class="input">
-                <input name="poBox_input" ng-model="poBox">
+                <input type="text" name="poBox_input" ng-model="poBox">
             </div>
         </div>
 
@@ -83,7 +75,7 @@
                 <label name="zip_label" translate="ZIP"></label>
             </div>
             <div class="input">
-                <input name="zip_input" ng-model="zip">
+                <input type="text" name="zip_input" ng-model="zip">
             </div>
         </div>
 
@@ -92,18 +84,16 @@
                 <label name="city_label" translate="CITY"></label>
             </div>
             <div class="input">
-                <input name="city_input" ng-model="city">
+                <input type="text" name="city_input" ng-model="city">
             </div>
         </div>
-
-        <br/>
 
         <div class="field" name="email_field">
             <div class="label">
                 <label name="email_label" translate="EMAIL"></label>
             </div>
             <div class="input">
-                <input name="email_input" ng-model="email">
+                <input type="text" name="email_input" ng-model="email">
             </div>
         </div>
 
@@ -112,20 +102,20 @@
                 <label name="telephone_label" translate="TELEPHONE"></label>
             </div>
             <div class="input">
-                <input name="telephone_input" ng-model="telephone">
+                <input type="text" name="telephone_input" ng-model="telephone">
             </div>
         </div>
 
-        <h2>Daten für Auszahlung</h2>
+        <h2 translate="TITLE_2"></h2>
 
-        <h3>Bankverbindung</h3>
+        <h3 translate="TITLE_3"></h3>
 
         <div class="field" name="bankName_field">
             <div class="label">
                 <label name="bankName_label" translate="BANK_NAME"></label>
             </div>
             <div class="input">
-                <input name="bankName_input" ng-model="bankName">
+                <input type="text" name="bankName_input" ng-model="bankName">
             </div>
         </div>
 
@@ -134,7 +124,7 @@
                 <label name="bankCity_label" translate="BANK_CITY"></label>
             </div>
             <div class="input">
-                <input name="bankCity_input" ng-model="bankCity">
+                <input type="text" name="bankCity_input" ng-model="bankCity">
             </div>
         </div>
 
@@ -143,7 +133,7 @@
                 <label name="bankIban_label" translate="BANK_IBAN"></label>
             </div>
             <div class="input">
-                <input name="bankIban_input" ng-model="bankIban">
+                <input type="text" name="bankIban_input" ng-model="bankIban">
             </div>
             <br>
             <div class="sample">
@@ -151,7 +141,7 @@
             </div>
         </div>
 
-        <h3>Postverbindung</h3>
+        <h3 translate="TITLE_4"></h3>
 
 
         <div class="field" name="bankAccount_field">
@@ -159,12 +149,29 @@
                 <label name="bankAccount_label" translate="BANK_ACCOUNT"></label>
             </div>
             <div class="input">
-                <input name="bankAccount_input" ng-model="bankAccount">
-            </div>
-            <div class="sample">
+                <input type="text" name="bankAccount_input" ng-model="bankAccount">
+            </div><br>
+            <div class="sample" style="">
                 <span translate="SAMPLE_BANK_ACCOUNT"></span>
             </div>
         </div>
+
+        <br>
+        <br>
+
+        <div class="field" name="upload_pdf">
+            <div class="label">
+                <label name="upload_label" translate="UPLOAD"></label>
+            </div>
+            <div class="input">
+                <input type="file" name="upload_input" ng-model="upload_file">
+            </div>
+        </div>
+
+        <input type="submit" class="button" value="{{'SUBMIT'|translate}}">
+
+        <br>
+
     </form>
 </div>
 

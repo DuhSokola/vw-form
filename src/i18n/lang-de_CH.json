@@ -1,13 +1,16 @@
-﻿{
+{
+  "ADDRESSDATA":"Adressdaten",
   "EMAIL": "E-Mail*",
   "TITLE_1": "Anforderungen an Kundendaten für Abwicklung",
+  "TITLE_2":"Daten für Auszahlung",
+  "TITLE_3":"Bankverbindung",
+  "TITLE_4":"Postverbindung",
   "SALUTATION" : "Anrede*",
+  "SUBMIT":"Absenden",
   "MR" : "Herr",
   "MRS" : "Frau",
   "SURNAME" : "Name*",
   "FORENAME" : "Vorname*",
-  "STREET" : "Strasse*",
-  "STREET_NR" : "Hausnummer*",
   "PO_BOX" : "Postfach",
   "ZIP" : "PLZ*",
   "CITY" : "Ort*",
@@ -16,11 +19,11 @@
   "BANK_CITY" : "Ort*",
   "BANK_IBAN" : "IBAN*",
   "BANK_ACCOUNT" : "Konto-Nummer*",
-  "SUBMIT" : "Abschicken",
   "CHOOSE" : "Bitte wahlen",
   "FORENAME_NAME":"Vorname, Name*",
   "STREETNR": "Strasse, Nr*",
   "ZIP_CITY": "PLZ, Ort*",
   "SAMPLE_BANK_IBAN":"(Muster) CH23 0483 5020 6290 8100 0",
-  "SAMPLE_BANK_ACCOUNT":"(Muster) 50-8700-1"
+  "SAMPLE_BANK_ACCOUNT":"(Muster) 50-8700-1",
+  "UPLOAD":"PDF-Datei hochladen*"
 }

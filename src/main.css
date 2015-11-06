@@ -1,55 +1,62 @@
 h1 {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 21px;
+    line-height: 1em;
+    font-family: arial, helvetica, sans-serif;
+    color: #333333;
 }
 
 h2 {
-    font-size: 20px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 16px;
 }
 
 h3 {
-    font-size: 17px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 14px;
     font-weight: bold;
 }
 
 form{
     width: 100%;
-    padding:10px 10px 10px 10px;
+    padding:12px 10px 10px 10px;
 }
 
 label{
     width: 160px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
 }
 
 select{
-    width:314px;
+    width:312px;
     height: 25px;
     border:1px solid #CFD7D9;
 }
 
 input{
-    width:310px;
-    height: 20px;
-    background-color:#fff;
-    border:1px solid #CFD7D9;
-    overflow:hidden;
-    clear:both;
-}
 
-.sample{
-    margin-top:10px;
-    margin-left:168px;
-    width:300px;
 }
 
 .wrapper{
-    width:500px;
+    width:488px;
     background-color: #EAEEED;
+}
+
+.sample{
+    margin-top:8px;
+    margin-left:160px;
+    width:300px;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
 }
 
 .field {
     width: 315px;
-    height: 40px;
+    height: 35px;
 }
 
 .field .label {
@@ -58,5 +65,50 @@ input{
 
 .field .input {
     float: right;
-    width:150px;
+    width:160px;
+
 }
+.field .input input {
+    width:310px;
+    height: 20px;
+    background-color:#fff;
+    border:1px solid #CFD7D9;
+    overflow:hidden;
+    clear:both;
+}
+
+.field .input2{
+    margin-left: 155px;
+    width:312px;
+}
+
+.street {
+    width:246px;
+    height: 20px;
+    background-color:#fff;
+    border:1px solid #CFD7D9;
+}
+
+.streetnr {
+    float:right;
+    width:53px;
+    height: 20px;
+    background-color:#fff;
+    border:1px solid #CFD7D9;
+}
+
+.button {
+    width:77px;
+    height:22px;
+    margin-top:8px;
+    margin-left:390px;
+    background-color: #fff;
+    border:1px solid #CFD7D9;
+    color:#333333;
+    padding:3px;
+    line-height:1em;
+    font-size: 12px !important;
+    box-shadow: #666 0 1px 2px;
+    border-radius: 2px;
+}
+.button:hover { background-color:#EAEEED; }

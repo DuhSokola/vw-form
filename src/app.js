@@ -38,8 +38,7 @@
             bank_city: $scope.bank_city,
             bank_iban: $scope.bank_iban,
             bank_account: $scope.bank_account
-        }
-
+        };
 
     }]);
 
