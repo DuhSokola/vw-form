@@ -13,19 +13,26 @@
     <link rel="stylesheet" href="/main.css">
     <!-- endinject -->
 </head>
-<body>
+<body ng-controller="mainCtrl">
 
 <h1 translate="TITLE_1"></h1>
-<div class="wrapper" ng-controller="mainCtrl">
-    <form>
+<div class="error-text" ng-show="myForm.$invalid && isSubmited">
+    <h2 translate="FORM_INVALID"></h2>
+</div>
+<div class="wrapper" >
+
+
+
+    <div class="form" ng-form="myForm">
+
         <h2 style="margin-top: -5px" translate="ADDRESSDATA"></h2>
 
         <div class="field" name="salutation_field">
             <div class="label">
-                <label name="salutation_label" translate="SALUTATION"></label>
+                <label name="salutation_label" ng-class="{'error':myForm.$invalid && isSubmited && salutation == undefined}" translate="SALUTATION"></label>
             </div>
             <div class="input">
-                <select>
+                <select ng-required="true">
                     <option value="" ng-model="salutation" translate="CHOOSE"></option>
                     <option value="mr" ng-model="salutation" translate="MR"></option>
                     <option value="mrs" ng-model="salutation" translate="MRS"></option>
@@ -35,10 +42,10 @@
 
         <div class="field" name="forename_field">
             <div class="label">
-                <label name="forename_label" translate="FORENAME"></label>
+                <label name="forename_label" ng-class="{'error':myForm.$invalid && isSubmited && (forename == undefined || forename.length == 0)}" translate="FORENAME"></label>
             </div>
             <div class="input">
-                <input type="text" name="forename_input" ng-model="forename">
+                <input type="text" name="forename_input" ng-model="forename" ng-required="true">
             </div>
         </div>
 
@@ -47,7 +54,7 @@
                 <label name="surname_label" translate="SURNAME"></label>
             </div>
             <div class="input">
-                <input type="text" name="surname_input" ng-model="surname">
+                <input type="text" name="surname_input" ng-model="surname" ng-required="true">
             </div>
         </div>
 
@@ -56,8 +63,8 @@
                 <label name="street_label" translate="STREETNR"></label>
             </div>
             <div class="input2">
-                <input class="street" type="text" name="street_input" ng-model="street">
-                <input class="streetnr" type="text" name="streetNr_input" ng-model="streetNr">
+                <input class="street" type="text" name="street_input" ng-model="street" ng-required="true">
+                <input class="streetnr" type="text" name="streetNr_input" ng-model="streetNr" ng-required="true">
             </div>
         </div>
 
@@ -75,7 +82,7 @@
                 <label name="zip_label" translate="ZIP"></label>
             </div>
             <div class="input">
-                <input type="text" name="zip_input" ng-model="zip">
+                <input type="text" name="zip_input" ng-model="zip" ng-required="true">
             </div>
         </div>
 
@@ -84,7 +91,7 @@
                 <label name="city_label" translate="CITY"></label>
             </div>
             <div class="input">
-                <input type="text" name="city_input" ng-model="city">
+                <input type="text" name="city_input" ng-model="city" ng-required="true">
             </div>
         </div>
 
@@ -93,7 +100,7 @@
                 <label name="email_label" translate="EMAIL"></label>
             </div>
             <div class="input">
-                <input type="text" name="email_input" ng-model="email">
+                <input type="text" name="email_input" ng-model="email" ng-required="true">
             </div>
         </div>
 
@@ -102,7 +109,7 @@
                 <label name="telephone_label" translate="TELEPHONE"></label>
             </div>
             <div class="input">
-                <input type="text" name="telephone_input" ng-model="telephone">
+                <input type="text" name="telephone_input" ng-model="telephone" ng-required="true">
             </div>
         </div>
 
@@ -115,7 +122,7 @@
                 <label name="bankName_label" translate="BANK_NAME"></label>
             </div>
             <div class="input">
-                <input type="text" name="bankName_input" ng-model="bankName">
+                <input type="text" name="bankName_input" ng-model="bankName" ng-required="true">
             </div>
         </div>
 
@@ -124,7 +131,7 @@
                 <label name="bankCity_label" translate="BANK_CITY"></label>
             </div>
             <div class="input">
-                <input type="text" name="bankCity_input" ng-model="bankCity">
+                <input type="text" name="bankCity_input" ng-model="bankCity" ng-required="true">
             </div>
         </div>
 
@@ -133,7 +140,7 @@
                 <label name="bankIban_label" translate="BANK_IBAN"></label>
             </div>
             <div class="input">
-                <input type="text" name="bankIban_input" ng-model="bankIban">
+                <input type="text" name="bankIban_input" ng-model="bankIban" ng-required="true">
             </div>
             <br>
             <div class="sample">
@@ -149,7 +156,7 @@
                 <label name="bankAccount_label" translate="BANK_ACCOUNT"></label>
             </div>
             <div class="input">
-                <input type="text" name="bankAccount_input" ng-model="bankAccount">
+                <input type="text" name="bankAccount_input" ng-model="bankAccount" ng-required="true">
             </div><br>
             <div class="sample" style="">
                 <span translate="SAMPLE_BANK_ACCOUNT"></span>
@@ -164,15 +171,16 @@
                 <label name="upload_label" translate="UPLOAD"></label>
             </div>
             <div class="input">
-                <input type="file" name="upload_input" ng-model="upload_file">
+                <input type="file" name="upload_input" ng-model="upload_file" ng-required="true">
             </div>
         </div>
 
-        <input type="submit" class="button" value="{{'SUBMIT'|translate}}">
+        <div class="submitArea">
+            <div class="required" translate="REQUIRED"></div>
 
-        <br>
-
-    </form>
+            <input type="submit" class="button" ng-click="submit()" value="{{'SUBMIT'|translate}}">
+        </div>
+    </div>
 </div>
 
 <!-- bower:js -->

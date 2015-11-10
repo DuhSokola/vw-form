@@ -16,7 +16,7 @@ h3 {
     font-weight: bold;
 }
 
-form{
+.form{
     width: 100%;
     padding:12px 10px 10px 10px;
 }
@@ -97,11 +97,17 @@ input{
     border:1px solid #CFD7D9;
 }
 
-.button {
-    width:77px;
+.submitArea{
+    border-top:1px solid #CFD7D9;
+    margin-top:15px;
+    margin-right:22px;
+    padding-top:11px;
     height:22px;
-    margin-top:8px;
-    margin-left:390px;
+}
+
+.button {
+    float:right;
+    width:77px;
     background-color: #fff;
     border:1px solid #CFD7D9;
     color:#333333;
@@ -112,3 +118,17 @@ input{
     border-radius: 2px;
 }
 .button:hover { background-color:#EAEEED; }
+
+.required{
+    float:left;
+    font-size: 13px !important;
+}
+
+.error-text{
+    margin-left:114px;
+    color:red;
+}
+
+.error{
+    color:red; !important;
+}

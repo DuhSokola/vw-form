@@ -24,21 +24,33 @@
 
     app.controller('mainCtrl',['$scope','Customer',function($scope, Customer){
 
-        var dataObject = {
-            salutation: $scope.salutation,
-            forename: $scope.forename,
-            surname: $scope.surname,
-            street: $scope.street,
-            street_nr: $scope.street_nr,
-            po_box: $scope.po_box,
-            zip:$scope.zip,
-            city: $scope.city,
-            telephone: $scope.telephone,
-            bank_name: $scope.bank_name,
-            bank_city: $scope.bank_city,
-            bank_iban: $scope.bank_iban,
-            bank_account: $scope.bank_account
+
+        $scope.isSubmited = undefined;
+
+        $scope.submit = function(){
+            console.log($scope.salutation);
+
+            $scope.isSubmited = true;
+            var dataObject = {
+                salutation: $scope.salutation,
+                forename: $scope.forename,
+                surname: $scope.surname,
+                street: $scope.street,
+                street_nr: $scope.street_nr,
+                po_box: $scope.po_box,
+                zip:$scope.zip,
+                city: $scope.city,
+                telephone: $scope.telephone,
+                bank_name: $scope.bank_name,
+                bank_city: $scope.bank_city,
+                bank_iban: $scope.bank_iban,
+                bank_account: $scope.bank_account
+            };
         };
+
+    }]);
+
+    app.service('ValidationService',[function(){
 
     }]);
 
