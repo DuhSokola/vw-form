@@ -26,6 +26,6 @@
   "SAMPLE_BANK_IBAN":"(Muster) CH23 0483 5020 6290 8100 0",
   "SAMPLE_BANK_ACCOUNT":"(Muster) 50-8700-1",
   "UPLOAD":"PDF-Datei hochladen*",
-  "FORM_INVALID":"Bitte geben Sie alle Pflichfelder an",
+  "FORM_INVALID":"Bitte geben Sie die Pflichfelder an",
   "REQUIRED":"* Pflichtfelder"
 }

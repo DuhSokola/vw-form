@@ -1,6 +1,7 @@
-var gulp = require('gulp'),
-    debug = require('gulp-debug');
-
+var gulp = require('gulp');
+var debug = require('gulp-debug');
+var url = require('url');
+var proxy = require('proxy-middleware');
 /**
  * Combined Tasks
  */
@@ -44,9 +45,15 @@ var browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
 gulp.task('browserSync', function() {
+    var proxyOptions = url.parse('http://localhost:3002/api/customers');
+    proxyOptions.route = '/api/customers';
+
     browserSync({
+        open: true,
+        port: 3000,
         server: {
-            baseDir: 'src'
+            baseDir: 'src',
+            middleware: [proxy(proxyOptions)]
         }
     });
     gulp.watch(['app.js','index.html','index3.html','*.css','i18n/*.json'], {cwd: 'src'}, reload);
