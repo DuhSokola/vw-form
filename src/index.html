@@ -168,10 +168,10 @@
 
         <div class="field" name="upload_pdf">
             <div class="label">
-                <label name="upload_label" ng-class="{'error':myForm.$invalid && startValidation && (upload_file == undefined)}" translate="UPLOAD"></label>
+                <label name="upload_label" ng-class="{'error':myForm.$invalid && startValidation && (upload_file == undefined || !fileIsValid)}" translate="UPLOAD"></label>
             </div>
             <div class="input">
-                <input type="file" fileread ng-model="upload_file" required="upload_file">
+                <input type="file" fileread ng-model="upload_file" required="true">
             </div>
         </div>
 

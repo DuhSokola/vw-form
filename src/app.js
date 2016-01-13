@@ -32,8 +32,10 @@
 
         $scope.submit = function(){
             $scope.startValidation = true;
-            $scope.myForm.$valid = 1;
-            if($scope.myForm.$valid){
+            //$scope.myForm.$valid = 1;
+
+            $scope.fileIsValid = /pdf/i.test($scope.upload_file);
+            if($scope.myForm.$valid && /pdf/i.test($scope.upload_file)){
                 var dataObject = {
                     salutation: $scope.salutation,
                     forename: $scope.forename,
@@ -51,7 +53,7 @@
                     bank_account: $scope.bank_account,
                     upload_file: $scope.upload_file
                 };
-                //console.log(JSON.stringify(dataObject));
+                console.log(JSON.stringify(dataObject));
                 var customer = new Customer();
                 customer.data = dataObject;
                 customer.$save();
@@ -72,10 +74,8 @@
                         scope.$apply(function () {
                             scope.fileread = loadEvent.target.result;
                         });
-                        console.log(scope.fileread);
                     };
                     try{
-                        console.log(changeEvent.target.files[0]);
                         reader.readAsDataURL(changeEvent.target.files[0]);
                     }catch(e){
                         scope.fileread = undefined;
