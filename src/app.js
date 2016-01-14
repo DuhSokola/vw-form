@@ -1,16 +1,17 @@
-;(function(){
+;(function () {
     'use strict';
 
     var deps = [
         'ngResource',
         'ngSanitize',
         'ngProgress',
-        'pascalprecht.translate'
+        'pascalprecht.translate',
+        'blockUI'
     ];
 
-    var app = angular.module('app',deps);
+    var app = angular.module('app', deps);
 
-    app.config(function($translateProvider){
+    app.config(function ($translateProvider) {
 
         /**
          * Translations
@@ -23,20 +24,24 @@
         $translateProvider.preferredLanguage('de_CH');
     });
 
-    app.factory('Customer',['$resource',function($resource){
+    app.factory('Customer', ['$resource', function ($resource) {
         return $resource('http://localhost:3000/api/customers/:id');
     }]);
 
-    app.controller('mainCtrl',['$scope','Customer',function($scope, Customer){
+    app.controller('mainCtrl', ['$scope', 'Customer', 'ngProgressFactory','blockUI', function ($scope, Customer, ngProgressFactory,blockUI) {
 
         $scope.startValidation = undefined;
 
-        $scope.submit = function(){
+        $scope.submit = function () {
             $scope.startValidation = true;
             $scope.myForm.$valid = 1;
 
             $scope.fileIsValid = /pdf/i.test($scope.upload_file);
-            if($scope.myForm.$valid && /pdf/i.test($scope.upload_file)){
+            if ($scope.myForm.$valid && /pdf/i.test($scope.upload_file)) {
+                $scope.progressbar = ngProgressFactory.createInstance();
+                $scope.progressbar.start();
+                blockUI.start();
+
                 var customerData = {
                     salutation: $scope.salutation,
                     forename: $scope.forename,
@@ -57,7 +62,7 @@
                 customerData = btoa(JSON.stringify(customerData));
 
                 var dataObject = {
-                    data: customerData,
+                    customerData: customerData,
                     file: $scope.upload_file
                 };
 
@@ -65,14 +70,23 @@
 
                 var customer = new Customer();
                 customer.data = dataObject;
-                customer.$save();
+                customer.$save(function () {
+                        $scope.progressbar.complete();
+                        blockUI.stop();
+                        console.log("OK");
+                    },
+                    function () {
+                        $scope.progressbar.complete();
+                        blockUI.stop();
+                        console.log("FAIL");
+                    });
             }
         };
     }]);
 
     app.directive("fileread", [function () {
         return {
-            require:'ngModel',
+            require: 'ngModel',
             scope: {
                 fileread: "=ngModel"
             },
@@ -84,9 +98,9 @@
                             scope.fileread = loadEvent.target.result;
                         });
                     };
-                    try{
+                    try {
                         reader.readAsDataURL(changeEvent.target.files[0]);
-                    }catch(e){
+                    } catch (e) {
                         scope.fileread = undefined;
                     }
                 });
