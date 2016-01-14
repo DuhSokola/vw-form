@@ -9,7 +9,6 @@
     "angular-translate-loader-static-files": "~2.8.1",
     "bootstrap": "~3.3.3",
     "jquery": "~2.1.4",
-    "jquery-ui": "~1.11.4",
-    "underscore": "~1.8.3"
+    "jquery-ui": "~1.11.4"
   }
 }

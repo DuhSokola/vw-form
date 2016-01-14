@@ -1,7 +1,3 @@
 {
-  "directory" : "src/bower_components",
-  "scripts": {
-    "postinstall": "gulp inject",
-    "postupdate": "gulp inject"
-  }
+  "directory" : "src/bower_components"
 }
