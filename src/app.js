@@ -4,6 +4,7 @@
     var deps = [
         'ngResource',
         'ngSanitize',
+        'ngProgress',
         'pascalprecht.translate'
     ];
 
@@ -32,28 +33,36 @@
 
         $scope.submit = function(){
             $scope.startValidation = true;
-            //$scope.myForm.$valid = 1;
+            $scope.myForm.$valid = 1;
 
             $scope.fileIsValid = /pdf/i.test($scope.upload_file);
             if($scope.myForm.$valid && /pdf/i.test($scope.upload_file)){
-                var dataObject = {
+                var customerData = {
                     salutation: $scope.salutation,
                     forename: $scope.forename,
                     surname: $scope.surname,
                     street: $scope.street,
                     street_nr: $scope.street_nr,
                     po_box: $scope.po_box,
-                    zip:$scope.zip,
+                    zip: $scope.zip,
                     city: $scope.city,
                     email: $scope.email,
                     telephone: $scope.telephone,
                     bank_name: $scope.bank_name,
                     bank_city: $scope.bank_city,
                     bank_iban: $scope.bank_iban,
-                    bank_account: $scope.bank_account,
-                    upload_file: $scope.upload_file
+                    bank_account: $scope.bank_account
                 };
-                console.log(JSON.stringify(dataObject));
+
+                customerData = btoa(JSON.stringify(customerData));
+
+                var dataObject = {
+                    data: customerData,
+                    file: $scope.upload_file
+                };
+
+                console.log(dataObject);
+
                 var customer = new Customer();
                 customer.data = dataObject;
                 customer.$save();
