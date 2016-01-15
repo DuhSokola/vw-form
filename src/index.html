@@ -139,7 +139,7 @@
 
         <div class="field" name="bankIban_field">
             <div class="label">
-                <label name="bankIban_label" ng-class="{'error':myForm.$invalid && startValidation && ((bank_iban == undefined || bank_iban.length == 0) && (bank_account == undefined || bank_account.length == 0))}" translate="BANK_IBAN"></label>
+                <label name="bankIban_label" ng-class="{'error':myForm.$invalid && startValidation && ((bank_iban == undefined || bank_iban.length == 0) && (bank_account == undefined || bank_account.length == 0) || !IBANisValid)}" translate="BANK_IBAN"></label>
             </div>
             <div class="input">
                 <input type="text" name="bankIban_input" ng-model="bank_iban" ng-required="true">

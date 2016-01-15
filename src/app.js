@@ -28,20 +28,23 @@
         return $resource('http://localhost:3000/api/customers/:id');
     }]);
 
-    app.controller('mainCtrl', ['$scope', 'Customer', 'ngProgressFactory','blockUI', function ($scope, Customer, ngProgressFactory,blockUI) {
+    app.controller('mainCtrl', ['$scope', 'Customer', 'ngProgressFactory', 'blockUI', function ($scope, Customer, ngProgressFactory, blockUI) {
 
         $scope.startValidation = undefined;
 
         $scope.submit = function () {
             $scope.startValidation = true;
-            $scope.myForm.$valid = 1;
-
-            $scope.fileIsValid = /pdf/i.test($scope.upload_file);
-            if ($scope.myForm.$valid && /pdf/i.test($scope.upload_file)) {
+            //$scope.myForm.$valid = 1;
+            if ($scope.bank_iban) {
+                $scope.IBANisValid = /[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/.test($scope.bank_iban.replace(/ /g, ''));
+            } else {
+                $scope.IBANisValid = false;
+            }
+            $scope.fileIsValid = /application\/pdf/.test($scope.upload_file);
+            if ($scope.myForm.$valid && $scope.fileIsValid) {
                 $scope.progressbar = ngProgressFactory.createInstance();
                 $scope.progressbar.start();
                 blockUI.start();
-
                 var customerData = {
                     salutation: $scope.salutation,
                     forename: $scope.forename,
