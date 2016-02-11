@@ -4,7 +4,7 @@
   "TITLE_1": "Anforderungen an Kundendaten für Abwicklung",
   "TITLE_2":"Daten für Auszahlung",
   "TITLE_3":"Bankverbindung",
-  "TITLE_4":"Postverbindung",
+  "TITLE_4":"oder Postverbindung",
   "SALUTATION" : "Anrede*",
   "SUBMIT":"Absenden",
   "MR" : "Herr",
@@ -25,7 +25,7 @@
   "ZIP_CITY": "PLZ, Ort*",
   "SAMPLE_BANK_IBAN":"(Muster) CH23 0483 5020 6290 8100 0",
   "SAMPLE_BANK_ACCOUNT":"(Muster) 50-8700-1",
-  "UPLOAD":"PDF-Datei hochladen*",
+  "UPLOAD":"PDF-Datei hochladen (max. 10MB)*",
   "FORM_INVALID":"Bitte geben Sie die Pflichfelder an",
   "REQUIRED":"* Pflichtfelder"
 }
