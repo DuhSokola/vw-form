@@ -49,7 +49,7 @@
             }
 
             $scope.fileIsValid = /application\/pdf/.test($scope.upload_file);
-            if (/*$scope.myForm.$valid && $scope.fileIsValid*/true) {
+            if ($scope.myForm.$valid && $scope.fileIsValid) {
                 $scope.progressbar = ngProgressFactory.createInstance();
                 $scope.progressbar.start();
                 blockUI.start();
