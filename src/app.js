@@ -28,7 +28,17 @@
         return $resource('http://localhost:3000/api/customers/:id');
     }]);
 
-    app.controller('mainCtrl', ['$scope', 'Customer', 'ngProgressFactory', 'blockUI', function ($scope, Customer, ngProgressFactory, blockUI) {
+    app.controller('mainCtrl', ['$scope', 'Customer', 'ngProgressFactory', 'blockUI', '$translate', function ($scope, Customer, ngProgressFactory, blockUI, $translate) {
+        $scope.language = location.search.split("=")[1];
+        if($scope.language=='de'){
+            $translate.use('de_CH');
+        }
+        else if($scope.language=='fr'){
+            $translate.use('fr_FR');
+        }
+        else if($scope.language=='it'){
+            $translate.use('it_IT');
+        }
 
         $scope.startValidation = undefined;
         $scope.$watch('bank_iban',function(){
@@ -67,7 +77,8 @@
                     bank_name: $scope.bank_name,
                     bank_city: $scope.bank_city,
                     bank_iban: $scope.bank_iban,
-                    bank_account: $scope.bank_account
+                    bank_account: $scope.bank_account,
+                    language: $rootScope.language
                 };
 
                 customerData = btoa(JSON.stringify(customerData));
