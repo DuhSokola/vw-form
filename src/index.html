@@ -6,24 +6,39 @@
     <meta charset="UTF-8">
 
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css" />
-    <link rel="stylesheet" href="bower_components/angular-block-ui/dist/angular-block-ui.css" />
+    <link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css"/>
+    <link rel="stylesheet" href="bower_components/angular-block-ui/dist/angular-block-ui.css"/>
     <!-- endbower -->
 
     <!-- inject:css -->
     <link rel="stylesheet" href="/fonts.css">
     <link rel="stylesheet" href="/main.css">
     <!-- endinject -->
+
+
+    <script>
+        function HandleBrowseClick() {
+            var fileinput = document.getElementById("browse");
+            fileinput.click();
+        }
+
+        function Handlechange() {
+            var fileinput = document.getElementById("browse");
+            var textinput = document.getElementById("filename");
+
+            textinput.value = fileinput.value.substring(fileinput.value.indexOf("fakepath")+9);
+        }
+    </script>
+
 </head>
 <body ng-controller="mainCtrl">
+
 
 <h1 translate="TITLE_1"></h1>
 <div class="error-text" ng-show="myForm.$invalid && startValidation">
     <h2 translate="FORM_INVALID"></h2>
 </div>
-<div class="wrapper" >
-
-
+<div class="wrapper">
 
     <form name="myForm" class="form" ng-submit="submit()" novalidate autocomplete="off">
 
@@ -31,7 +46,9 @@
 
         <div class="field" name="salutation_field">
             <div class="label">
-                <label name="salutation_label" ng-class="{'error':myForm.$invalid && startValidation && salutation == undefined}" translate="SALUTATION"></label>
+                <label name="salutation_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && salutation == undefined}"
+                       translate="SALUTATION"></label>
             </div>
             <div class="input">
                 <select ng-required="true" ng-model="salutation">
@@ -44,7 +61,9 @@
 
         <div class="field" name="forename_field">
             <div class="label">
-                <label name="forename_label" ng-class="{'error':myForm.$invalid && startValidation && (forename == undefined || forename.length == 0)}" translate="FORENAME"></label>
+                <label name="forename_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (forename == undefined || forename.length == 0)}"
+                       translate="FORENAME"></label>
             </div>
             <div class="input">
                 <input type="text" name="forename_input" ng-model="forename" ng-required="true">
@@ -53,7 +72,9 @@
 
         <div class="field" name="surname_field">
             <div class="label">
-                <label name="surname_label" ng-class="{'error':myForm.$invalid && startValidation && (surname == undefined || surname.length == 0)}" translate="SURNAME"></label>
+                <label name="surname_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (surname == undefined || surname.length == 0)}"
+                       translate="SURNAME"></label>
             </div>
             <div class="input">
                 <input type="text" name="surname_input" ng-model="surname" ng-required="true">
@@ -62,7 +83,9 @@
 
         <div class="field" name="street_field">
             <div class="label">
-                <label name="street_label" ng-class="{'error':myForm.$invalid && startValidation && ((street == undefined || street.length == 0) || (street_nr == undefined || street_nr.length == 0))}" translate="STREETNR"></label>
+                <label name="street_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && ((street == undefined || street.length == 0) || (street_nr == undefined || street_nr.length == 0))}"
+                       translate="STREETNR"></label>
             </div>
             <div class="input2">
                 <input class="street" type="text" name="street_input" ng-model="street" ng-required="true">
@@ -81,7 +104,9 @@
 
         <div class="field" name="zip_field">
             <div class="label">
-                <label name="zip_label" ng-class="{'error':myForm.$invalid && startValidation && (zip == undefined || zip.length == 0)}" translate="ZIP"></label>
+                <label name="zip_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (zip == undefined || zip.length == 0)}"
+                       translate="ZIP"></label>
             </div>
             <div class="input">
                 <input type="text" name="zip_input" ng-model="zip" ng-required="true">
@@ -90,7 +115,9 @@
 
         <div class="field" name="city_field">
             <div class="label">
-                <label name="city_label" ng-class="{'error':myForm.$invalid && startValidation && (city == undefined || city.length == 0)}" translate="CITY"></label>
+                <label name="city_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (city == undefined || city.length == 0)}"
+                       translate="CITY"></label>
             </div>
             <div class="input">
                 <input type="text" name="city_input" ng-model="city" ng-required="true">
@@ -99,16 +126,22 @@
 
         <div class="field" name="email_field">
             <div class="label">
-                <label name="email_label" ng-class="{'error':myForm.$invalid && startValidation && (email == undefined || email.length == 0)}" translate="EMAIL"></label>
+                <label name="email_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (email == undefined || email.length == 0)}"
+                       translate="EMAIL"></label>
             </div>
             <div class="input">
-                <input type="text" name="email_input" ng-model="email" ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" ng-required="true">
+                <input type="text" name="email_input" ng-model="email"
+                       ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i"
+                       ng-required="true">
             </div>
         </div>
 
         <div class="field" name="telephone_field">
             <div class="label">
-                <label name="telephone_label" ng-class="{'error':myForm.$invalid && startValidation && (telephone == undefined || telephone.length == 0)}" translate="TELEPHONE"></label>
+                <label name="telephone_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (telephone == undefined || telephone.length == 0)}"
+                       translate="TELEPHONE"></label>
             </div>
             <div class="input">
                 <input type="text" name="telephone_input" ng-model="telephone" ng-required="true">
@@ -121,7 +154,9 @@
 
         <div class="field" name="bankName_field">
             <div class="label">
-                <label name="bankName_label" ng-class="{'error':myForm.$invalid && startValidation && ((bank_name == undefined || bank_name.length == 0) && (bank_account == undefined || bank_account.length == 0))}" translate="BANK_NAME"></label>
+                <label name="bankName_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && ((bank_name == undefined || bank_name.length == 0) && (bank_account == undefined || bank_account.length == 0))}"
+                       translate="BANK_NAME"></label>
             </div>
             <div class="input">
                 <input type="text" name="bankName_input" ng-model="bank_name" ng-required="true">
@@ -130,7 +165,9 @@
 
         <div class="field" name="bankCity_field">
             <div class="label">
-                <label name="bankCity_label" ng-class="{'error':myForm.$invalid && startValidation && ((bank_city == undefined || bank_city.length == 0) && (bank_account == undefined || bank_account.length == 0))}" translate="BANK_CITY"></label>
+                <label name="bankCity_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && ((bank_city == undefined || bank_city.length == 0) && (bank_account == undefined || bank_account.length == 0))}"
+                       translate="BANK_CITY"></label>
             </div>
             <div class="input">
                 <input type="text" name="bankCity_input" ng-model="bank_city" ng-required="true">
@@ -139,7 +176,9 @@
 
         <div class="field" name="bankIban_field">
             <div class="label">
-                <label name="bankIban_label" ng-class="{'error':myForm.$invalid && startValidation && (((bank_iban == undefined || bank_iban.length == 0) && (bank_account == undefined || bank_account.length == 0) || !IBANisValid && (bank_account == undefined || bank_account.length == 0)))}" translate="BANK_IBAN"></label>
+                <label name="bankIban_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (((bank_iban == undefined || bank_iban.length == 0) && (bank_account == undefined || bank_account.length == 0) || !IBANisValid && (bank_account == undefined || bank_account.length == 0)))}"
+                       translate="BANK_IBAN"></label>
             </div>
             <div class="input">
                 <input type="text" name="bankIban_input" ng-model="bank_iban" ng-required="true">
@@ -155,11 +194,14 @@
 
         <div class="field" name="bankAccount_field">
             <div class="label">
-                <label name="bankAccount_label" ng-class="{'error':myForm.$invalid && startValidation && (bank_account == undefined || bank_account.length == 0)  && ((bank_name == undefined || bank_name.length == 0) || (bank_city == undefined || bank_city.length == 0) || (bank_iban == undefined || bank_iban.length == 0))}" translate="BANK_ACCOUNT"></label>
+                <label name="bankAccount_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (bank_account == undefined || bank_account.length == 0)  && ((bank_name == undefined || bank_name.length == 0) || (bank_city == undefined || bank_city.length == 0) || (bank_iban == undefined || bank_iban.length == 0))}"
+                       translate="BANK_ACCOUNT"></label>
             </div>
             <div class="input">
                 <input type="text" name="bankAccount_input" ng-model="bank_account" ng-required="false">
-            </div><br>
+            </div>
+            <br>
             <div class="sample" style="">
                 <span translate="SAMPLE_BANK_ACCOUNT"></span>
             </div>
@@ -168,12 +210,30 @@
         <br>
         <br>
 
-        <div class="field" name="upload_pdf">
+        <!--<div class="field" name="upload_pdf">
             <div class="label">
-                <label name="upload_label" ng-class="{'error':myForm.$invalid && startValidation && (upload_file == undefined || !fileIsValid)}" translate="UPLOAD"></label>
+                <label name="upload_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (upload_file == undefined || !fileIsValid)}"
+                       translate="UPLOAD"></label>
             </div>
             <div class="input" style="width:100px">
-                <input type="file" fileread ng-model="upload_file" accept="application/pdf" required="true" style="width:250px">
+                <input type="file" data-buttonText="Your label here." fileread ng-model="upload_file"
+                       accept="application/pdf" required="true" style="width:250px">
+            </div>
+        </div>-->
+        <div class="field" name="upload_pdf">
+            <div class="label">
+                <label name="upload_label"
+                       ng-class="{'error':myForm.$invalid && startValidation && (upload_file == undefined || !fileIsValid)}"
+                       translate="UPLOAD"></label>
+            </div>
+            <div class="inputfile" style="width:155px;float:right; margin-right:-55px;">
+                <input type="file" id="browse" name="fileupload" fileread ng-model="upload_file"
+                       accept="application/pdf" required="true" style="display: none" onChange="Handlechange();">
+                <input type="button" value="{{'UPLOAD_BUTTON_LABEL'|translate}}" id="fakeBrowse"
+                       onclick="HandleBrowseClick();"/>
+                <input type="text" style="width:185px; float:right; margin-right: -95px;" id="filename"
+                       readonly="true"/>
             </div>
         </div>
 
@@ -195,6 +255,7 @@
 <script src="bower_components/jquery-ui/jquery-ui.js"></script>
 <script src="bower_components/ngprogress/build/ngProgress.js"></script>
 <script src="bower_components/angular-block-ui/dist/angular-block-ui.js"></script>
+<script src="bower_components/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
 <!-- endbower -->
 
 <!-- inject:js -->

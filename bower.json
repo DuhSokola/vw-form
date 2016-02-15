@@ -11,6 +11,7 @@
     "jquery": "~2.1.4",
     "jquery-ui": "~1.11.4",
     "ngprogress": "~1.1.2",
-    "angular-block-ui": "~0.2.2"
+    "angular-block-ui": "~0.2.2",
+    "bootstrap-filestyle": "^1.2.1"
   }
 }

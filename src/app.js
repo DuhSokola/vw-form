@@ -30,6 +30,7 @@
 
     app.controller('mainCtrl', ['$scope', 'Customer', 'ngProgressFactory', 'blockUI', '$translate', function ($scope, Customer, ngProgressFactory, blockUI, $translate) {
         $scope.language = location.search.split("=")[1];
+
         if($scope.language=='de'){
             $translate.use('de_CH');
         }
@@ -125,10 +126,10 @@
                     try {
                         if(changeEvent.target.files[0].size < 10484736){
                             reader.readAsDataURL(changeEvent.target.files[0]);
+                            console.log(changeEvent.target.files[0]);
                         }else{
                             alert("File is to big (max. 10Mb)");
                         }
-                        console.log(changeEvent.target.files[0]);
                     } catch (e) {
                         scope.fileread = undefined;
                     }
