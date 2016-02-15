@@ -23,7 +23,7 @@
   "BANK_ACCOUNT" : "N° de compte*",
   "SAMPLE_BANK_ACCOUNT":"(Modèle) 50-8700-1",
   "UPLOAD":"Télécharger le fichier PDF (max. 10 Mo)*",
-  "FORM_INVALID":"Bitte geben Sie die Pflichfelder an",
+  "FORM_INVALID":"Veuillez remplir les champs suivants",
   "REQUIRED":"* Champs obligatoires",
   "UPLOAD_BUTTON_LABEL":"Upload",
   "SUBMIT":"Envoyer"
