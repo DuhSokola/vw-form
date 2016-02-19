@@ -25,9 +25,9 @@
     });
 
     app.factory('Customer', ['$resource', function ($resource) {
-        //return $resource('http://leadcollector.amag.ch/VWCashBackBackend/vwCashBack');
+        return $resource('http://leadcollector.amag.ch/VWCashBackBackend/vwCashBack');
         //return $resource('http://s1100pws429.dmz.car.web:8080/VWCashBackBackend/vwCashBack');
-        return $resource('http://localhost:8080/vwCashBack');
+        //return $resource('http://localhost:8080/vwCashBack');
     }]);
 
     app.controller('mainCtrl', ['$scope', 'Customer', 'ngProgressFactory', 'blockUI', '$translate', function ($scope, Customer, ngProgressFactory, blockUI, $translate) {
