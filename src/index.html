@@ -234,12 +234,12 @@
                            ng-class="{'error':myForm.$invalid && startValidation && (upload_file == undefined || !fileIsValid)}"
                            translate="UPLOAD"></label>
                 </div>
-                <div class="inputfile" style="width:155px;float:right; margin-right:-55px;">
+                <div class="inputfile" style="width:155px;float:right; margin-right:-85px;">
                     <input type="file" id="browse" name="fileupload" fileread ng-model="upload_file"
                            accept="application/pdf" required="true" style="display: none" onChange="Handlechange();">
                     <input type="button" value="{{'UPLOAD_BUTTON_LABEL'|translate}}" id="fakeBrowse"
                            onclick="HandleBrowseClick();"/>
-                    <input type="text" style="width:185px; float:right; margin-right: -95px;" id="filename"
+                    <input type="text" style="width:155px; float:right; margin-right: -65px;" id="filename"
                            readonly="true"/>
                 </div>
             </div>
