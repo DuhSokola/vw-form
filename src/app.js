@@ -25,12 +25,12 @@
     });
 
     app.factory('Customer', ['$resource', function ($resource) {
-        return $resource('http://localhost:3000/api/customers/:id');
+        return $resource('http://s1100pws429.dmz.car.web:8080/VWCashBackBackend/vwCashBack');
+        //return $resource('http://localhost:8080/vwCashBack');
     }]);
 
     app.controller('mainCtrl', ['$scope', 'Customer', 'ngProgressFactory', 'blockUI', '$translate', function ($scope, Customer, ngProgressFactory, blockUI, $translate) {
-        $scope.language = location.search.split("=")[1];
-
+        $scope.language = location.search.split("=")[1] || 'de';
         if($scope.language=='de'){
             $translate.use('de_CH');
         }
@@ -79,8 +79,10 @@
                     bank_city: $scope.bank_city,
                     bank_iban: $scope.bank_iban,
                     bank_account: $scope.bank_account,
-                    language: $rootScope.language
+                    language: $scope.language
                 };
+
+                console.log(customerData);
 
                 customerData = btoa(JSON.stringify(customerData));
 
@@ -89,20 +91,20 @@
                     file: $scope.upload_file
                 };
 
-                console.log(dataObject);
+                console.log(JSON.stringify(dataObject));
 
                 var customer = new Customer();
                 customer.data = dataObject;
                 customer.$save(function () {
                         $scope.progressbar.complete();
                         blockUI.stop();
-                        window.location.href = "google.ch";
+                        //window.location.href = "google.ch";
                         console.log("OK");
                     },
                     function () {
                         $scope.progressbar.complete();
                         blockUI.stop();
-                        window.location.href = "success.html";
+                        //window.location.href = "success.html";
                         console.log("FAIL");
                     });
             }
