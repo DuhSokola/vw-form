@@ -26,5 +26,7 @@
   "FORM_INVALID":"Veuillez remplir les champs suivants",
   "REQUIRED":"* Champs obligatoires",
   "UPLOAD_BUTTON_LABEL":"Upload",
-  "SUBMIT":"Envoyer"
+  "SUBMIT":"Envoyer",
+  "SUCCESS_TEXT": "Merci pour votre enregistrement. Vous recevrez prochainement un email de confirmation",
+  "ERROR_TEXT": "Le formulaire n’a pas pu être envoyé. Veuillez à nouveau essayer plus dard, S’il vous plaît"
 }

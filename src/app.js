@@ -31,6 +31,10 @@
     }]);
 
     app.controller('mainCtrl', ['$scope', 'Customer', 'ngProgressFactory', 'blockUI', '$translate', function ($scope, Customer, ngProgressFactory, blockUI, $translate) {
+
+        $scope.submitted = false;
+        $scope.failed = false;
+
         $scope.language = location.search.split("=")[1] || 'de';
         if($scope.language=='de'){
             $translate.use('de_CH');
@@ -99,13 +103,15 @@
                 customer.$save(function () {
                         $scope.progressbar.complete();
                         blockUI.stop();
-                        //window.location.href = "google.ch";
+                        $scope.submitted = true;
+                        $scope.failed = false;
                         console.log("OK");
                     },
                     function () {
                         $scope.progressbar.complete();
                         blockUI.stop();
-                        //window.location.href = "success.html";
+                        $scope.submitted = true;
+                        $scope.failed = true;
                         console.log("FAIL");
                     });
             }

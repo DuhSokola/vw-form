@@ -26,5 +26,7 @@
   "FORM_INVALID":"Si prega di specificare i contenuti obbligatori",
   "REQUIRED":"* Campi obbligatori",
   "UPLOAD_BUTTON_LABEL":"Upload",
-  "SUBMIT":"Invia"
+  "SUBMIT":"Invia",
+  "SUCCESS_TEXT": "Grazie per la registrazione. Vi sarà presto inviata una email di conferma.",
+  "ERROR_TEXT": "Non e stato possibile d’inviare il modulo di registrazione. La preghiamo di riprovare più tardi."
 }

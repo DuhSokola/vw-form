@@ -26,5 +26,7 @@
   "UPLOAD":"PDF-Datei hochladen (max. 10MB)*",
   "FORM_INVALID":"Bitte geben Sie die Pflichfelder an",
   "REQUIRED":"* Pflichtfelder",
-  "UPLOAD_BUTTON_LABEL":"Upload"
+  "UPLOAD_BUTTON_LABEL":"Upload",
+  "SUCCESS_TEXT": "Besten Dank für Ihre Anmeldung. Sie werden von uns in Kürze eine Bestätigungsmail erhalten.",
+  "ERROR_TEXT": "Das Formular konnte nicht versendet werden. Bitte versuchen Sie es später erneut."
 }
