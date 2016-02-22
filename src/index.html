@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
 
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css"/>
-    <link rel="stylesheet" href="bower_components/angular-block-ui/dist/angular-block-ui.css"/>
+    <link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css" />
+    <link rel="stylesheet" href="bower_components/angular-block-ui/dist/angular-block-ui.css" />
     <!-- endbower -->
 
     <!-- inject:css -->
@@ -234,12 +234,12 @@
                            ng-class="{'error':myForm.$invalid && startValidation && (upload_file == undefined || !fileIsValid)}"
                            translate="UPLOAD"></label>
                 </div>
-                <div class="inputfile" style="width:155px;float:right; margin-right:-85px;">
+                <div class="inputfile" style="width:155px;float:right; margin-right:-78px;">
                     <input type="file" id="browse" name="fileupload" fileread ng-model="upload_file"
                            accept="application/pdf" required="true" style="display: none" onChange="Handlechange();">
                     <input type="button" value="{{'UPLOAD_BUTTON_LABEL'|translate}}" id="fakeBrowse"
                            onclick="HandleBrowseClick();"/>
-                    <input type="text" style="width:155px; float:right; margin-right: -65px;" id="filename"
+                    <input type="text" style="width:155px; float:right; margin-right: -75px;" id="filename"
                            readonly="true"/>
                 </div>
             </div>
@@ -261,7 +261,7 @@
 <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/jquery-ui/jquery-ui.js"></script>
-<script src="bower_components/ngprogress/build/ngprogress.js"></script>
+<script src="bower_components/ngprogress/build/ngProgress.js"></script>
 <script src="bower_components/angular-block-ui/dist/angular-block-ui.js"></script>
 <script src="bower_components/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
 <!-- endbower -->
