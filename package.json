@@ -18,13 +18,14 @@
   "dependencies": {
     "bower": "^1.6.3",
     "browser-sync": "^2.9.10",
+    "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-debug": "^2.1.1",
     "gulp-inject": "^3.0.0",
-    "wiredep": "^2.2.2",
-    "express": "^4.13.3",
+    "http-proxy-middleware": "^0.10.0",
     "proxy-middleware": "^0.15.0",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "wiredep": "^2.2.2"
   },
   "scripts": {
     "postinstall": "bower install"

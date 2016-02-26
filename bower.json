@@ -2,9 +2,6 @@
   "name": "vw-form",
   "version": "0.0.1",
   "dependencies": {
-    "angular": "~1.4.7",
-    "angular-resource": "~1.4.7",
-    "angular-sanitize": "~1.4.7",
     "angular-translate": "~2.8.1",
     "angular-translate-loader-static-files": "~2.8.1",
     "bootstrap": "~3.3.3",
@@ -12,7 +9,11 @@
     "jquery-ui": "~1.11.4",
     "ngprogress": "~1.1.2",
     "angular-block-ui": "~0.2.2",
-    "bootstrap-filestyle": "^1.2.1"
+    "bootstrap-filestyle": "^1.2.1",
+    "moxie": "^1.4.1",
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "angular-sanitize": "^1.5.0"
   },
   "resolutions": {
     "angular": "1.5.0"

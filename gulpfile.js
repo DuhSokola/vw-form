@@ -42,15 +42,15 @@ gulp.task('injectSources', function () {
  * Server with BrowserSync
  */
 gulp.task('browserSync', function() {
-    //var proxyOptions = url.parse('http://localhost:3002/api/customers');
-    //proxyOptions.route = '/api/customers';
+    var proxyOptions = url.parse('http://leadcollector.amag.ch/VWCashBackBackend/vwCashBack');
+    proxyOptions.route = '/VWCashBackBackend/vwCashBack';
 
     browserSync({
         open: true,
         port: 3000,
         server: {
-            baseDir: 'src'
-           // middleware: [proxy(proxyOptions)]
+            baseDir: 'src',
+            middleware: [proxy(proxyOptions)]
         }
     });
     gulp.watch(['app.js','index.html','index3.html','*.css','i18n/*.json'], {cwd: 'src'}, reload);

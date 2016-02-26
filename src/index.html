@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="bower_components/angular-block-ui/dist/angular-block-ui.css" />
     <!-- endbower -->
 
+
     <!-- inject:css -->
     <link rel="stylesheet" href="/fonts.css">
     <link rel="stylesheet" href="/main.css">
@@ -166,7 +167,7 @@
                            translate="BANK_NAME"></label>
                 </div>
                 <div class="input">
-                    <input type="text" name="bankName_input" ng-model="bank_name" ng-required="true">
+                    <input type="text" name="bankName_input" ng-model="bank_name">
                 </div>
             </div>
 
@@ -177,7 +178,7 @@
                            translate="BANK_CITY"></label>
                 </div>
                 <div class="input">
-                    <input type="text" name="bankCity_input" ng-model="bank_city" ng-required="true">
+                    <input type="text" name="bankCity_input" ng-model="bank_city">
                 </div>
             </div>
 
@@ -188,7 +189,7 @@
                            translate="BANK_IBAN"></label>
                 </div>
                 <div class="input">
-                    <input type="text" name="bankIban_input" ng-model="bank_iban" ng-required="true">
+                    <input type="text" name="bankIban_input" ng-model="bank_iban">
                 </div>
                 <br>
                 <div class="sample">
@@ -206,7 +207,7 @@
                            translate="BANK_ACCOUNT"></label>
                 </div>
                 <div class="input">
-                    <input type="text" name="bankAccount_input" ng-model="bank_account" ng-required="false">
+                    <input type="text" name="bankAccount_input" ng-model="bank_account">
                 </div>
                 <br>
                 <div class="sample" style="">
@@ -255,8 +256,6 @@
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-translate/angular-translate.js"></script>
 <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -264,10 +263,20 @@
 <script src="bower_components/ngprogress/build/ngProgress.js"></script>
 <script src="bower_components/angular-block-ui/dist/angular-block-ui.js"></script>
 <script src="bower_components/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+<script src="bower_components/moxie/bin/js/moxie.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <!-- endbower -->
 
 <!-- inject:js -->
 <script src="/app.js"></script>
 <!-- endinject -->
+
+<script>mOxie.Env.swf_url = 'bower_components/moxie/bin/flash/Moxie.min.swf';</script>
+<script>
+    //window.FileReader = mOxie.FileReader;
+</script>
+
+
 </body>
 </html>
