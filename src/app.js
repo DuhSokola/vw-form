@@ -11,7 +11,10 @@
 
     var app = angular.module('app', deps);
 
-    app.config(function ($translateProvider) {
+    app.config(function ($translateProvider,$httpProvider) {
+
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        $httpProvider.defaults.useXDomain = true;
 
         /**
          * Translations
@@ -26,7 +29,15 @@
 
     app.factory('Customer', ['$resource', function ($resource) {
         //return $resource('https://cashback.volkswagen.ch/VWCashBackBackend/vwCashBack');
-        return $resource('https://www.leadcollector.amag.ch/VWCashBackBackend/vwCashBack');
+        return $resource('https://www.leadcollector.amag.ch/VWCashBackBackend/vwCashBack',{},{
+            fetch:{
+                    method: 'POST',
+                    headers: {
+                        'useXDomain': true,
+                        'Content-Type': 'application/json; charset=utf-8'
+                    }
+            }
+        });
         //return $resource('http://s1100pws429.dmz.car.web:8080/VWCashBackBackend/vwCashBack');
         //return $resource('http://localhost:8080/vwCashBack');
         //return $resource('http://localhost:3000/VWCashBackBackend/vwCashBack');
