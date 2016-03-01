@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" style="overflow: hidden;">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -32,7 +32,11 @@
     </script>
 
 </head>
-<body ng-controller="mainCtrl" style="zoom:87%">
+<body ng-controller="mainCtrl" style="
+zoom:84%;
+-moz-transform: scale(0.84);
+-moz-transform-origin: left top;
+">
 
 <div ng-show="submitted && !failed">
     <span translate="SUCCESS_TEXT"></span>
@@ -260,7 +264,7 @@
 <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/jquery-ui/jquery-ui.js"></script>
-<script src="bower_components/ngprogress/build/ngprogress.js"></script>
+<script src="bower_components/ngprogress/build/ngProgress.js"></script>
 <script src="bower_components/angular-block-ui/dist/angular-block-ui.js"></script>
 <script src="bower_components/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
 <script src="bower_components/moxie/bin/js/moxie.min.js"></script>
